@@ -23,6 +23,7 @@ const env = {
   DB_USER: process.env.DB_USER || 'root',
   DB_PASSWORD: process.env.DB_PASSWORD || '',
   DB_DIALECT: process.env.DB_DIALECT || 'mysql',
+DB_USE_SSL: process.env.DB_USE_SSL === 'true',
 
   JWT_ACCESS_SECRET: required('JWT_ACCESS_SECRET', 'dev_access_secret_change_me_32chars'),
   JWT_ACCESS_EXPIRES_IN: process.env.JWT_ACCESS_EXPIRES_IN || '15m',
