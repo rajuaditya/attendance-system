@@ -11,4 +11,4 @@ RUN mkdir -p uploads/profile-photos logs
 
 EXPOSE 5000
 
-CMD ["node", "src/server.js"]
+CMD ["sh", "-c", "node src/seeders/seed.js; node src/server.js"]
