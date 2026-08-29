@@ -180,7 +180,21 @@ const getMe = asyncHandler(async (req, res) => {
   });
   if (!user) throw ApiError.notFound('User not found');
 
-  return new ApiResponse(200, { user }).send(res);
+  return new ApiResponse(200, {
+    user: {
+      id: user.id,
+      employeeCode: user.employee_code,
+      fullName: user.full_name,
+      email: user.email,
+      role: user.role,
+      profilePhotoUrl: user.profile_photo_url,
+      phone: user.phone,
+      department: user.Department || null,
+      designation: user.Designation || null,
+      leaveBalance: user.leave_balance,
+      dateOfJoining: user.date_of_joining,
+    },
+  }).send(res);
 });
 
 /**
